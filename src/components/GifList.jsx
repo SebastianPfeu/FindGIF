@@ -1,13 +1,12 @@
-/* eslint-disable */
-import React, { Component } from 'react';
+import React from 'react';
 import Gif from './Gif';
 
 const GifList = (props) => {
+  const { gifs, selectGif } = props;
   return (
     <div className="gif-list">
-      {props.gifs.map((gif) =>
-        <Gif id={gif} key={gif} selectGif={props.selectGif} />
-      )}
+      {console.log(gifs)}
+      {gifs.map(gif => <Gif id={gif} key={gif} selectGif={selectGif} />)}
     </div>
   );
 };

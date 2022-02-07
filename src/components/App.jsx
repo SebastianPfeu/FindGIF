@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import Gif from './Gif';
@@ -14,31 +13,37 @@ class App extends Component {
       gifs: [],
       selectedGifId: "xT9IgDEI1iZyb2wqo8"
     };
+  }
+
+  search = (query) => {
+    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${query}&limit=10`;
+    fetch(giphEndpoint).then(response => response.json())
+      .then((data) => {
+        const gifs = data.data.map(gif => gif.id);
+        this.setState({ gifs });
+      });
   };
 
-  search(query) {
-    console.log(query);
-  };
-
-  selectGif(id) {
-    this.setState({ selectedGifId: id })
+  selectGif = (id) => {
+    this.setState({ selectedGifId: id });
   }
 
   render() {
-    return(
+    const { selectedGifId, gifs } = this.state;
+    return (
       <div>
         <div className="left-scene">
           <SearchBar searchFunction={this.search} />
           <div className="selected-gif">
-            <Gif id={this.state.selectedGifId} />
+            <Gif id={selectedGifId} />
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifs} selectGif={this.selectGif} />
+          <GifList gifs={gifs} selectGif={this.selectGif} />
         </div>
       </div>
     );
-  };
-};
+  }
+}
 
 export default App;
