@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
+  handleUpdate = (event) => {
+    const { searchFunction } = this.props;
+    searchFunction(event.target.value);
+  }
+
   render() {
     return (
       <div>
-        This is a search bar
+        <input
+          type="text"
+          className="form-control form-search"
+          onChange={this.handleUpdate}
+        />
       </div>
     );
-    ;
   }
-};
+}
 
 export default SearchBar;
