@@ -4,7 +4,7 @@ class SearchBar extends Component {
   handleUpdate = (event) => {
     const { searchFunction } = this.props;
     searchFunction(event.target.value);
-  }
+  };
 
   render() {
     return (
