@@ -1,30 +1,8 @@
-# react-boilerplate
+# FindGIF
 
-Simple react starter with the following config:
+FindGIF is an application using React that allows users to find GIFs of all sorts. 
 
-- React, ReactDOM
-- Webpack 4
-- Babel with es2015 and react presets
-- Bootstrap (css only, loaded from a cdn in `index.html`)
-- work with `.js` or `.jsx` files
-- main `application.scss` stylesheet is imported in `index.js` as a module to enjoy hot reloading
+The application is hosted here: https://sebastianpfeu.github.io/FindGIF/
 
-## Scripts
+<img width="1508" alt="Bildschirmfoto 2022-02-09 um 11 26 48" src="https://user-images.githubusercontent.com/67929127/153179473-f49cf782-55cc-44f4-8991-076208b5a026.png">
 
-To start the local Webpack Dev Server (usually on port `8080`):
-
-```bash
-yarn start
-```
-
-To lint all JavaScript files in the `src` folder:
-
-```bash
-yarn lint
-```
-
-To build and deploy your app to `gh-pages` branch on the GitHub repo:
-
-```bash
-yarn deploy
-```
